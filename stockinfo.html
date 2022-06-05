@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% block body %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<div class="border">
+    <table class="worddark"></br></br></br></br>
+        <tr>
+            <td>ID:</td>
+            <td>{{ stockdetails[0] }}</td>
+        </tr>
+        <tr>
+            <td>open_val:</td>
+            <td>{{ stockdetails[1] }}</td>
+        </tr>
+        <tr>
+            <td>high_val:</td>
+            <td>{{ stockdetails[2] }}</td>
+        </tr>
+    </table>
+</div>
+    <!--<iframe src="graph.html"></iframe>-->
+<br><br>
+        <a href="{{ url_for('buy') }}">
+            <button type="button" class="btn btn-outline-primary"> Buy</button>
+        </a>
+        <p></p>
+        <a href="{{ url_for('sell') }}">
+            <button type="button" class="btn btn-outline-primary"> Sell </button>
+        </a>
+{% endblock %}
