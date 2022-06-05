@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+        {% block body %}
+        <div class="containermy-3">
+        <div class="one" text-align="center">
+      
+            <ul class="list-group">
+            <li class="list-group-item active" aria-current="true"> Name : {{session.name}}</li>
+            <li class="list-group-item active" aria-current="true"> Wallet: {{userdata[4]}}</li>
+            <br><br>
+            <li class="list-group-item active" aria-current="true"> Amount Invested: {{userdata[5]}}</li>
+            <li class="list-group-item active" aria-current="true"> Current Holding: {{curr_holding[0]}}</li>
+            {% if curr_holding[0] - userdata[5] < 0 %}
+            <li class="list-group-item active" aria-current="true" style="color:red;"> Change in Value: {{curr_holding[0]-userdata[5]}}</li>
+            {%else%}
+            <li class="list-group-item active" aria-current="true" style="color:green;"> Change in Value: {{curr_holding[0]-userdata[5]}}</li>
+            {%endif%}
+            </ul>
+            <ul>
+                <h3>Stocks Purchased</h3>
+                <table class="table"> 
+                      
+                       <tr>
+                            <th>Ticker</th>
+                            <th>Quantity</th>
+                            <th>Bought Price</th>
+                            <th>Investment </th>
+                            <th>Last Trading Price </th>
+                            <th>Current Holding</th>
+                            <th>Difference</th>
+                        </tr><br>
+                    {% for stockdata in stockdata %}  
+                        <tr> 
+                            
+                            <td><a href="/stockinfo/{{stockdata[0]}}">{{stockdata[0]}}</a></td>
+                            <td>{{stockdata[1]}}</td>
+                            <td>{{stockdata[2]}}</td> 
+                            <td>{{stockdata[3]}}</td>
+                            <td>{{stockdata[4]}}</td>
+                            <td>{{stockdata[5]}}</td>
+                            {% if stockdata[3] - stockdata[5] > 0%}
+                            <td style="color:red">{{stockdata[3]-stockdata[5]}}</td>
+                            {% else %}
+                            <td style="color:green">{{stockdata[3]-stockdata[5]}}</td>
+                            {%endif%}
+                            <br>
+                            
+                        </tr> 
+                    {% endfor %} 
+                </table>
+                <br>
+                
+                
+            </ul>
+        </div>     
+    </body>
+    {% endblock %}
+</html>
