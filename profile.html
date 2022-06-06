@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block body %}
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='base.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital@0;1&family=Poppins:wght@300;500&display=swap" rel="stylesheet">>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Libre+Franklin:ital@0;1&family=Poppins:ital,wght@0,300;0,500;1,500&display=swap" rel="stylesheet">
+    <style>
+        button{
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul class="nav nav-tabs" id="bar">
+  <li class="nav-item" id="bar-element">
+      <a  class="nav-link active" id="bar-link" href="/profile">Profile</a>
+  </li>
+  <li class="nav-item" id="bar-element">
+      <a  class="nav-link" id="bar-link" href="/stocks">Stocks</a>
+  </li>
+  <li class="nav-item" id="bar-element">
+      <a class="nav-link" id="bar-link" aria-current="page" href="/movers">Movers </a>
+  </li >
+  <li class="nav-item" id="bar-element">
+      <a class="nav-link" id="bar-link" href="/gainers">Gainers </a>
+  </li>
+  <li class="nav-item" id="bar-element">
+      <a class="nav-link" id="bar-link" href="/losers">Losers</a>
+  </li>
+  <li class="nav-item" id="bar-element">
+      <a class="nav-link" id="bar-link" href="/portfolio">Portfolio</a>
+  </li>
+</ul>
+<div class="container my-3">
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item active" aria-current="true" id="profile-bar" style="font-family: 'Alfa Slab One', cursive;
+        font-family: 'Libre Franklin', sans-serif; font-family: 'Poppins', sans-serif; font-size: 160%" >Hello {{session.name}} !</li>
+        <li class="list-group-item active" aria-current="true" id="profile-bar" style="font-family: 'Alfa Slab One', cursive;
+        font-family: 'Libre Franklin', sans-serif; font-family: 'Poppins', sans-serif;">Wallet : {{amount[4]}}</li></li>
+        
+        <li class="list-group-item" id="lii"> Net Profit: {{transactions[1]}}</li>
+        <li class="list-group-item" id="lii"> Net Lost: {{transactions[2]}}</li>
+        <li class="list-group-item" id="lii"> Amount Invested: {{amount[5]}}</li>
+        <li class="list-group-item" id="lii"> Postive transactions: {{transactions[3]}}</li>
+        <li class="list-group-item"id="lii"> Negative transactions: {{transactions[4]}}</li>
+    </ul>
+    {% if transactions[1] + transactions[2] > 0 %}
+    <h3 style="color:red; font-family: 'Alfa Slab One', cursive;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Poppins', sans-serif;">NET PROFIT/LOSS : {{transactions[1] + transactions[2]}}</h3>
+    {%else%}
+    <h3 style="color:green; font-family: 'Alfa Slab One', cursive;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Poppins', sans-serif;">NET PROFIT/LOSS : {{transactions[1] + transactions[2]}}</h3>
+    {%endif%}
+
+    
+    {% if day[0] == 'Saturday' or day[0] == 'Sunday' %}
+    <h6>{{date[0]}}, {{time[0]}}, {{day[0]}}</h6><h4 style="color:red;">MARKET CLOSED!</h4>
+    {% else %}
+    <h6>Date: {{date[0]}}<br>Day: {{day[0]}}<br>Time: {{time[0]}}</h6>
+    {% endif %}
+</div>
+<button id="logout-button" ><a href="{{ url_for('logout') }}">Logout</a></button>
+</body>
+{% endblock %}

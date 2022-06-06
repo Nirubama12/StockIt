@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+<style>
+    
+    .container{
+        background-color: #f907fc;
+        background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+        padding: 20px 50px 40px 100px;
+        align-items: center;
+        border-radius: 25px;
+        margin-top: 1.5%;
+        border: 3px solid rgb(5, 37, 142);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2> Sign up </h2>
+    <div class="msg">{{ msg }}</div>
+    <form method="post" action="">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Create a user name">
+      </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email id</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Set password </label>
+            <input type="password" class="form-control" id="title" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p >Already have an account?  <a  href="{{url_for('login')}}" style="color: white;"> Sign In here</a></p>
+</div>
+</body>
+<html>
+{% endblock %}
