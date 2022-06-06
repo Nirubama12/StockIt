@@ -1,0 +1,82 @@
+#bar{
+    background-color: #f907fc;
+    background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+    
+}
+
+#bar-element{
+    color:black;
+    font-weight: 200;
+    font-family:'Lucida Sans';
+}
+
+#bar-link{
+    color:black;
+    font-weight: 200;
+    font-family:'Lucida Sans';
+}
+
+#profile-bar{
+    background-color: #f907fc;
+    background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+    color: black;
+    font-family:'Franklin Gothic Medium';
+}
+#lii{
+    border:  solid 1px rgb(31, 31, 116);
+    font-family: 'Libre Franklin', sans-serif; 
+    font-family: 'Poppins', sans-serif;
+}
+#logout-button{
+    
+    text-align: center;
+    background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+    width: 150px;
+    height:40px; 
+    margin-left: 46%;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    border: solid 1px rgb(31, 31, 147);
+    
+ 
+}
+
+#logout-button:hover{
+
+    color: rgb(0, 0, 0);
+    background-image: #f907fc;
+    
+}
+
+#portfolio-bar{
+    text-align: center;
+    width:50%;
+    height:30%;
+    margin-left: 25%;
+}
+
+#portfolio-element{
+    display: inline-block;
+    font-size: larger;
+    font-weight: 500;
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(31, 31, 126);
+}
+#pl{
+    font-size: larger;
+    font-weight: 500;
+}
+
+#tbl{
+    margin-top: 1px;
+}
+table{
+    border: solid 1px rgb(49, 49, 138);
+    border-spacing: 30px;
+    border-radius: 50px;
+}
+
+tr:hover {background-color: #96c6cf;}
